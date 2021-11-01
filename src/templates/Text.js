@@ -9,22 +9,37 @@ import SEO from "../components/seo"
 const Text = ({data}) => {
     const {author, text,authorPresentation, title, country} = data.text
     // console.log(author)
-    const options = {
-      renderNode : {
-          "embedded-asset-block": node => {
-              return <div>
-                  {/* <img width="400" src={node.data.target.field.file[en-US].url}/> */}
-              </div>
-          }
-      },
+    // const options = {
+    //   renderNode : {
+    //       "embedded-asset-block": node => {
+    //           return <div>
+    //               {/* <img width="400" src={node.data.target.field.file[en-US].url}/> */}
+    //           </div>
+    //       }
+    //   },
       // to embed another post (to be completed)
-          "embedded-entry-block": node => {
-              const {title, image, text} = node.data.target.fields
-              return (
-                  <div></div>
-              )
+        //   "embedded-entry-block": node => {
+        //       const {title, image, text} = node.data.target.fields
+        //       return (
+        //           <div></div>
+        //       )
+        //   }
+        const images = data.images.edges
+
+          const options = {
+            renderNode : {
+              "embedded-asset-block":(node)=> {
+                let file
+                for (let i = 0; i < images.length; i ++){
+                  if (images[i].node.contentful_id === node.data.target.sys.contentful_id){
+                    file = images[i].node
+                  }
+                }
+                return (<div className="image-in-article" ><img src={file.file.url}/> <p>{file.description}</p></div>)
+              }
+            }
           }
-      }
+      
     return (
         <Layout>
             <SEO title={`${author} - ${country}`} description={title}/>
