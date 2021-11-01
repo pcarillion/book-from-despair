@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {graphql, useStaticQuery} from 'gatsby'
 
@@ -26,6 +27,7 @@ const Text = ({data}) => {
       }
     return (
         <Layout>
+            <SEO title={`${author} - ${country}`} description={title}/>
             <h4>{title}</h4>
             <h5>{author} - {country}</h5>
             <div>
