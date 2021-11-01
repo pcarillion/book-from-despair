@@ -2,7 +2,7 @@ import React from 'react'
 import './welcome.css'
 import { StaticImage } from "gatsby-plugin-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
 
 
 const Welcome = () => {
