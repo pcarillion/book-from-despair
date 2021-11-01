@@ -1,0 +1,24 @@
+
+.welcomeContainer {height: 100vh; width: 100vw; display: flex; flex-direction: row; align-items: center; justify-content: center;}
+
+.welcomeContent {height: 400px; min-width: 700px; max-width: 960px; border: black solid 0.5px; padding: 30px; display: flex; flex-direction: row; justify-content: space-between;}
+
+
+.welcomeText {max-width: 50%;}
+
+.welcomeContent h1 {font-size: 28px;}
+
+.enterBtn {font-family: 'Segoe Ui'; height: 40px; line-height: 40px; width: 200px; border: black solid 0.1px; background-color: black; color: white; text-align: center;}
+
+.imageWelcome {float: right;}
+
+
+@media screen and (max-width: 992px) {
+
+    .welcomeContent {max-width:90vw; min-width: unset; flex-direction: column; height: unset;}
+
+    .welcomeContent .welcomeText {margin-bottom: 20px; text-align: center; width: 100%; max-width: unset;}
+
+    .enterBtn {margin: 0 auto;}
+
+}

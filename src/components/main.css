@@ -1,0 +1,88 @@
+
+
+.menu {position: fixed; top: 0; left: 0; width: 460px; padding: 20px; max-height: 100vh; color: white;}
+
+.menu .titles {height: 20vh;}
+
+.menu h1 {font-size: 28px; margin-bottom: 20px;}
+
+.menubackground {z-index: -2; position: fixed; top: 0; left: 0; opacity: 1; height: 100vh; width: 460px;}
+
+.menubackground .imagemenu {height: 100%;width: 100%;}
+
+.menufilter {z-index: -1;position: fixed; height: 100vh; width: 460px; top: 0; left: 0;background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0)) }
+
+.menu ul {height: 70vh; overflow-y: scroll; overflow-x: hidden;}
+
+.menu ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+.menu ul {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+  margin-left: 0;
+}
+
+.menu ul h4 {
+  /* margin-left: -10px; */
+}
+
+.menu ul li {transition: 0.3 ease-in-out; position:relative; padding: 0 10px;}
+
+.menu ul li:after {content:""; width: 0px; position: absolute; left: 10px; bottom: 0; transition: 0.3s ease-in-out }
+
+.menu ul li:hover {
+    transform: translate(5px);
+    cursor: pointer;
+}
+
+.menu ul li:hover:after {width: 20px;border: solid white 0.5px;}
+
+
+
+
+/* main */
+
+main {margin-left: 460px; padding: 50px 6%;}
+
+.imageheader {float: right; margin: 0 0 10px 10px;}
+
+
+.mobile-arrow {display: none;}
+
+
+@media screen and (max-width: 992px) {
+
+  .menu {z-index: 3; max-width: 100vw; transition: 0.3s ease-in-out;}
+
+  .menu.close {transform: translateX(-460px);}
+
+  main {margin-left: 0; padding-top: 160px;}
+
+  .menu-mobile {z-index: 2; position: fixed; background: white; width: 100vw; padding: 50px 6%; display: flex; align-items: center; flex-direction: row;}
+
+  .menu-button {transition: 0.3s ease-in-out; cursor: pointer; width: 30px; height: 30px; margin-right: 30px; position: relative;}
+
+  .menu-button.hide {opacity: 0;}
+
+  .menu-button div:first-of-type {width: 100%; height: 0; position: absolute; top: 0; left: 0; border-bottom: solid black 3px}
+  
+  .menu-button div:nth-of-type(2) {width: 100%; height: 0; position: absolute; top: calc(50% - 2px); left: 0; border-bottom: solid black 3px}
+
+  .menu-button div:last-of-type {width: 100%; height: 0; position: absolute; bottom: 0; left: 0; border-bottom: solid black 3px}
+
+  .menu-mobile h2 {margin-bottom: 0;}
+
+  .menu .titles {position: relative;}
+
+  .mobile-arrow {display: block; position: absolute; height: 30px; width: 30px;  top: 146px; right: 0px; cursor: pointer;}
+
+  .mobile-arrow > div {width: 100%; height: 100%; position: relative;}
+
+  .arrow-container div:first-of-type {width: 50%; height: 0; position: absolute; top: 7px; right: -1px; transform: rotate(45deg); border-bottom: solid white 3px}
+  
+  .arrow-container div:nth-of-type(2) {width: 100%; height: 0; position: absolute; top: calc(50% - 2px); left: 0; border-bottom: solid white 3px}
+
+  .arrow-container div:last-of-type {width: 50%; height: 0; position: absolute; bottom: 8px; right: -1px; transform: rotate(-45deg); border-bottom: solid white 3px}
+}
