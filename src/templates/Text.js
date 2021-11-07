@@ -24,7 +24,8 @@ const Text = ({data}) => {
         //           <div></div>
         //       )
         //   }
-        const images = data.images && data.images.edges
+        console.log(data)
+        const images = data.images.edges
 
           const options = {
             renderNode : {
@@ -61,6 +62,16 @@ query($url:String){
     text{json}
     title
     country
+  }
+  images: allContentfulAsset{
+    edges{
+      node{
+        contentful_id
+        id
+        file{url}
+        description
+      }
+    }
   }
 }
 `
