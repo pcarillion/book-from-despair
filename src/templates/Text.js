@@ -24,7 +24,7 @@ const Text = ({data}) => {
         //           <div></div>
         //       )
         //   }
-        const images = data.images.edges
+        const images = data.images && data.images.edges
 
           const options = {
             renderNode : {

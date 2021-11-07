@@ -63,21 +63,21 @@ const Menu = () => {
                     </div>
                 </div>
                 <AniLink cover bg="black" direction="left" to={"/introduction"}>
-                    <h1>From Despair to Resilience</h1>
+                    <h1 className="menu-maintitle">Women in war publications</h1>
                     <p>Women coping with the pandemic in the Middle-East and South Asia</p>
                 </AniLink>
             </div>
             <ul>
-                <AniLink cover bg="black" direction="left" to={"/"}><h4>Covid-19 in warzones</h4></AniLink>
+                <AniLink activeClass="active" cover bg="black" direction="left" to={"/"}><h4>Covid-19 in warzones</h4></AniLink>
                     {
                         chaptersWarzones.edges.map((chapter, key) => {
-                            return <AniLink cover bg="black" direction="left" to={`/${chapter.node.url}`}><li key={key}>{chapter.node.country} - {chapter.node.author}</li></AniLink>
+                            return <AniLink activeClass="active" cover bg="black" direction="left" to={`/${chapter.node.url}`}><li key={key}>{chapter.node.country} - {chapter.node.author}</li></AniLink>
                         })
                     }
                 <AniLink cover bg="black" direction="left" to={"/exiles"}><h4>Exiles</h4></AniLink>
                     {
                         chaptersExiles.edges.map((chapter, key) => {
-                            return <AniLink cover bg="black" direction="left" to={`/${chapter.node.url}`}><li key={key}>{chapter.node.country} - {chapter.node.author}</li></AniLink>
+                            return <AniLink activeClass="active" cover bg="black" direction="left" to={`/${chapter.node.url}`}><li key={key}>{chapter.node.country} - {chapter.node.author}</li></AniLink>
                         })
                     }
             </ul>
