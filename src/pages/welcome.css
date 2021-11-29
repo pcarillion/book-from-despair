@@ -8,7 +8,15 @@
 
 .welcomeContent h1 {font-size: 28px;}
 
+.welcomeContent h2 {font-size: 24px; margin-top: 30px;}
+
+.welcomeContent .externalLink {text-decoration: underline;}
+
+.welcomeContent .externalLink:hover {color: darkgrey}
+
 .enterBtn {font-family: 'Segoe Ui'; height: 40px; line-height: 40px; width: 200px; border: black solid 0.1px; background-color: black; color: white; text-align: center;}
+
+.enterBtn:hover {border: black solid 0.1px; background-color: white; text-decoration: none; color: black;}
 
 .imageWelcome {float: right;}
 

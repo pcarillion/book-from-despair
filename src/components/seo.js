@@ -6,7 +6,6 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -22,13 +21,25 @@ query{
         
       }
     }
+    favicon:contentfulAsset(title:{eq:"logo favicone"}) {
+      file {
+        fileName
+        url
+      }
+      title
+      fluid {
+        src
+      }
+    }
   }
 `
 
 
 function SEO({ title, description}) {
  
-  const {site} = useStaticQuery(getData);
+  const {site, favicon} = useStaticQuery(getData);
+
+  console.log(favicon)
 
   const {siteDesc, siteTitle, image} = site.siteMetadata
 
@@ -36,7 +47,8 @@ function SEO({ title, description}) {
   return (
     <Helmet title={ title?  `${title} | ${siteTitle}` : `${siteTitle}`} htmlAttributes={{lang:"eng"}}>
             <meta name="description" content={description || siteDesc}/>
-            <meta rel="icon" href={""} />
+            <meta rel="icon" href={favicon.file.src} />
+            <link rel="icon" href={favicon.file.src} type="svg"/>
     </Helmet>
   )
 }

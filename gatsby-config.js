@@ -6,8 +6,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `From Despair to Resilience`,
-    description: `Women coping with the pandemic in the Middle-East and South-Asia`,
+    title: `Women in War Publications`,
+    description: `The publications site Women in War`,
     author: `Carol Mann`,
     image: ``
   },

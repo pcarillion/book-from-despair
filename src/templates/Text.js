@@ -8,23 +8,6 @@ import SEO from "../components/seo"
 
 const Text = ({data}) => {
     const {author, text,authorPresentation, title, country} = data.text
-    // console.log(author)
-    // const options = {
-    //   renderNode : {
-    //       "embedded-asset-block": node => {
-    //           return <div>
-    //               {/* <img width="400" src={node.data.target.field.file[en-US].url}/> */}
-    //           </div>
-    //       }
-    //   },
-      // to embed another post (to be completed)
-        //   "embedded-entry-block": node => {
-        //       const {title, image, text} = node.data.target.fields
-        //       return (
-        //           <div></div>
-        //       )
-        //   }
-        console.log(data)
         const images = data.images.edges
 
           const options = {
