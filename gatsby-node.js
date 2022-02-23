@@ -9,11 +9,10 @@ exports.createPages = async ({graphql, actions}) => {
                 node{
                     url
         }}}
-        intros: allContentfulIntros{
+        parts: allContentfulPart{
             edges{
               node{
                 url
-                type
               }
             }
           }
@@ -32,12 +31,12 @@ exports.createPages = async ({graphql, actions}) => {
         })
     })
 
-    data.intros.edges.forEach(({node}) =>{
+    data.parts.edges.forEach(({node}) =>{
         createPage({
             path: `${node.url}`,
             component: path.resolve("./src/templates/Intros.js"),
             context:{
-                type: node.type,
+                url: node.url,
             }
         })
     })

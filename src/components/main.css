@@ -12,7 +12,7 @@
 
 .menufilter {z-index: -1;position: fixed; height: 100vh; width: 460px; top: 0; left: 0;background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0)) }
 
-.menu ul {height: 70vh; overflow-y: scroll; overflow-x: hidden;}
+.menu > ul {height: 70vh; overflow-y: scroll; overflow-x: hidden;}
 
 .menu a {text-decoration: none;}
 
@@ -24,23 +24,33 @@
   -ms-overflow-style: none;  
   scrollbar-width: none;
   margin-left: 0;
+  display: flex;
+  flex-direction: column;
 }
+
+.menu ul li#introduction {order: 1}
+.menu ul li#women-coping-with-pandemic {order: 2}
+.menu ul li#sarajevo-kucne-amazoneke {order: 3}
+.menu ul li#gender-and-armed-conflicts {order: 4}
+.menu ul li#the-future-of-armed-conflict {order: 5}
+.menu ul li#of-interest {order: 6}
 
 .menu ul h4 {
   /* margin-left: -10px; */
 }
 
-.menu ul li {transition: 0.3 ease-in-out; position:relative; padding: 0 10px;}
 
-.menu ul li:after {content:""; width: 0px; position: absolute; left: 10px; bottom: 0; transition: 0.3s ease-in-out }
+.menu ul li.inner-li {transition: 0.3 ease-in-out; position:relative; padding: 5px 10px;}
 
-.menu ul li:hover {transform: translate(5px); cursor: pointer;}
+.menu ul li.inner-li:after {content:""; width: 0px; position: absolute; left: 10px; bottom: 0; transition: 0.3s ease-in-out }
 
-.menu ul li:hover:after {width: 20px;border: solid white 0.5px;}
+.menu ul li.inner-li:hover {transform: translate(5px); cursor: pointer;}
 
-.menu ul a.active li {transform: translate(5px); cursor: pointer;}
+.menu ul li.inner-li:hover:after {width: 20px;border: solid white 0.5px;}
 
-.menu ul a.active li:after {width: 20px;border: solid white 0.5px;}
+/* .menu ul a li.inner-li {transform: translate(5px); cursor: pointer;}
+
+.menu ul a li.inner-li:after {width: 20px;border: solid white 0.5px;} */
 
 
 

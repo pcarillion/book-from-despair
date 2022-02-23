@@ -1,10 +1,10 @@
 
 .welcomeContainer {height: 100vh; width: 100vw; display: flex; flex-direction: row; align-items: center; justify-content: center;}
 
-.welcomeContent {height: 400px; min-width: 700px; max-width: 960px; border: black solid 0.5px; padding: 30px; display: flex; flex-direction: row; justify-content: space-between;}
+.welcomeContent {height: 500px; min-width: 850px; max-width: 960px; border: black solid 0.5px; padding: 30px; display: flex; flex-direction: row; justify-content: space-between;}
 
 
-.welcomeText {max-width: 50%;}
+.welcomeText {max-width: 50%; margin-right: 5px;}
 
 .welcomeContent h1 {font-size: 28px;}
 
@@ -20,10 +20,21 @@
 
 .imageWelcome {float: right;}
 
+.welcomeText ul {margin-left: 0; display: flex;flex-direction: column;}
+
+.welcomeText ul li {transition: 0.3s ease-in-out; margin-bottom: 7px;}
+.welcomeText ul li#introduction {order: 1}
+.welcomeText ul li#women-coping-with-pandemic {order: 2}
+.welcomeText ul li#sarajevo-kucne-amazoneke {order: 3}
+.welcomeText ul li#gender-and-armed-conflicts {order: 4}
+.welcomeText ul li#the-future-of-armed-conflict {order: 5}
+.welcomeText ul li#of-interest {order: 6}
+
+.welcomeText ul li:hover {transform: translate(5px); cursor: pointer;;}
 
 @media screen and (max-width: 992px) {
 
-    .welcomeContent {max-width:90vw; min-width: unset; flex-direction: column; height: unset;}
+    .welcomeContent {max-width:90vw; max-height: 90vh; min-width: unset; flex-direction: column; height: unset;}
 
     .welcomeContent .welcomeText {margin-bottom: 20px; text-align: center; width: 100%; max-width: unset;}
 

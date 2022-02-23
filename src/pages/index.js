@@ -17,20 +17,25 @@ query  {
           src
         }
       }
+    parts: allContentfulPart{
+        edges {
+            node{
+                title
+                url
+            }
+        }
+    }
     }
 `
 
 const Welcome = () => {
-    const {logoFullBlack}  = useStaticQuery(getData)
+    const {logoFullBlack, parts}  = useStaticQuery(getData)
 
     return (
         <div className="welcomeContainer">
         <SEO />
             <div className="welcomeContent">
                 <div className="welcomeText">
-                    {/* <h1>From Despair to Resilience</h1>
-                    <p>Women coping with the pandemic in the Middle-East and South Asia</p>
-                    <p>Carol Mann</p> */}
                     <img src={logoFullBlack.file.url} />
                     <StaticImage
                         src={logoFullBlack.file.url}
@@ -43,15 +48,20 @@ const Welcome = () => {
                     />
                     <h2>Women in War Publications</h2>
                     <p>The publications site of <a href="https://womeninwar.org/" className="externalLink">Women in War</a></p>
-                    <AniLink cover bg="black" direction="left" to={"/introduction"}><div class="enterBtn">Read the book</div></AniLink>
+                    <ul>
+                        {
+                            parts.edges.map((part, i) =>{
+                                return <li id={part.node.url}>- <AniLink cover bg="black" direction="left" to={`/${part.node.url}`}>{part.node.title}</AniLink></li>
+                            })
+                        }
+                    </ul>
                 </div>
                 <StaticImage
-                    src="../images/mainimage.jpeg"
-                    width={300}
+                    src="../images/welcome_image.jpeg"
+                    width={450}
                     quality={95}
                     formats={["AUTO", "WEBP", "AVIF"]}
                     alt="main image"
-                    // style={{ marginBottom: `1.45rem` }}
                     class="imageWelcome"
                     />
             </div>
